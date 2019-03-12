@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CBDEFF">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#CBDEFF"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button00"
+                style="@style/GameBoardButtonStyle"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/button01"
+                style="@style/GameBoardButtonStyle"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/button02"
+                style="@style/GameBoardButtonStyle"
+                android:text="3" />
+
+            <Button
+                android:id="@+id/button03"
+                style="@style/GameBoardButtonStyle"
+                android:text="4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button10"
+                style="@style/GameBoardButtonStyle"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/button11"
+                style="@style/GameBoardButtonStyle"
+                android:text="6" />
+
+            <Button
+                android:id="@+id/button12"
+                style="@style/GameBoardButtonStyle"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/button13"
+                style="@style/GameBoardButtonStyle"
+                android:text="8" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button20"
+                style="@style/GameBoardButtonStyle"
+                android:text="9" />
+
+            <Button
+                android:id="@+id/button21"
+                style="@style/GameBoardButtonStyle"
+                android:text="10" />
+
+            <Button
+                android:id="@+id/button22"
+                style="@style/GameBoardButtonStyle"
+                android:text="11" />
+
+            <Button
+                android:id="@+id/button23"
+                style="@style/GameBoardButtonStyle"
+                android:text="12" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button30"
+                style="@style/GameBoardButtonStyle"
+                android:text="13" />
+
+            <Button
+                android:id="@+id/button31"
+                style="@style/GameBoardButtonStyle"
+                android:text="14" />
+
+            <Button
+                android:id="@+id/button32"
+                style="@style/GameBoardButtonStyle"
+                android:text="15" />
+
+            <Button
+                android:id="@+id/button33"
+                style="@style/GameBoardButtonStyle"
+                android:text="" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
