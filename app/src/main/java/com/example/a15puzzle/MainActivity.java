@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         showBoard();
-
-        mTextViewScore.setText(Integer.toString(noOfMoves));
     }
 
     public void onClick(View v) {
@@ -69,14 +67,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void buttonClick(int row, int column) {
         game.move(row, column);
-        showBoard();
-
 
         if (game.getSuccess()) {
             noOfMoves++;
         }
 
-        mTextViewScore.setText(Integer.toString(noOfMoves));
+        showBoard();
 
         if (game.isWon()) {
             Toast.makeText(MainActivity.this,
@@ -112,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         buttons[emptyX][emptyY].setVisibility(View.INVISIBLE);
+        mTextViewScore.setText(Integer.toString(noOfMoves));
     }
 
     @Override

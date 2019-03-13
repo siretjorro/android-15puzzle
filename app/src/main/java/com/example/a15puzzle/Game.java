@@ -9,7 +9,7 @@ import java.util.Collections;
 
 public class Game implements Serializable {
     private String[] winningSolution = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15",""};
-    private String[] boardToShuffle = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15",""};
+    private String[] boardToShuffle = winningSolution.clone();
     private String[][] gameBoard;
     private boolean successfulMove;
 
