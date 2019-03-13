@@ -11,7 +11,6 @@ public class Game implements Serializable {
     private String[] winningSolution = {"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15",""};
     private String[] boardToShuffle = winningSolution.clone();
     private String[][] gameBoard;
-    private boolean successfulMove;
 
     public Game() {
         this.gameBoard = new String[4][4];
@@ -29,42 +28,41 @@ public class Game implements Serializable {
         }
     }
 
-    public void move(int clickedRow, int clickedCol) {
+    public boolean move(int clickedRow, int clickedCol) {
         int[] emptyCell = getEmptyCoordinates();
         int emptyCellRowNo = emptyCell[0];
         int emptyCellColNo = emptyCell[1];
+        boolean isXAxis = clickedRow-emptyCellRowNo == 0;
+        boolean isYAxis = clickedCol-emptyCellColNo == 0;
 
-        if (clickedRow-emptyCellRowNo == 0 && clickedCol < emptyCellColNo) {
-            for (int i = emptyCellColNo; i > clickedCol; i--) {
-                gameBoard[clickedRow][i] = gameBoard[clickedRow][i-1];
-            }
-
-            gameBoard[clickedRow][clickedCol] = "";
-            successfulMove = true;
-        } else if (clickedRow-emptyCellRowNo == 0 && clickedCol > emptyCellColNo) {
-            for (int i = emptyCellColNo; i < clickedCol; i++) {
-                gameBoard[clickedRow][i] = gameBoard[clickedRow][i+1];
-            }
-
-            gameBoard[clickedRow][clickedCol] = "";
-            successfulMove = true;
-        } else if (clickedCol-emptyCellColNo == 0 && clickedRow < emptyCellRowNo) {
-            for (int i = emptyCellRowNo; i > clickedRow; i--) {
-                gameBoard[i][clickedCol] = gameBoard[i-1][clickedCol];
-            }
-
-            gameBoard[clickedRow][clickedCol] = "";
-            successfulMove = true;
-        } else if (clickedCol-emptyCellColNo == 0 && clickedRow > emptyCellRowNo) {
-            for (int i = emptyCellRowNo; i < clickedRow; i++) {
-                gameBoard[i][clickedCol] = gameBoard[i+1][clickedCol];
-            }
-
-            gameBoard[clickedRow][clickedCol] = "";
-            successfulMove = true;
-        } else {
-            successfulMove = false;
+        if (!isXAxis && !isYAxis) {
+            return false;
         }
+
+        if (isXAxis) {
+            if (clickedCol < emptyCellColNo) {
+                for (int i = emptyCellColNo; i > clickedCol; i--) {
+                    gameBoard[clickedRow][i] = gameBoard[clickedRow][i-1];
+                }
+            } else if (clickedCol > emptyCellColNo) {
+                for (int i = emptyCellColNo; i < clickedCol; i++) {
+                    gameBoard[clickedRow][i] = gameBoard[clickedRow][i+1];
+                }
+            }
+        } else if (isYAxis) {
+            if (clickedRow < emptyCellRowNo) {
+                for (int i = emptyCellRowNo; i > clickedRow; i--) {
+                    gameBoard[i][clickedCol] = gameBoard[i-1][clickedCol];
+                }
+            } else if (clickedRow > emptyCellRowNo) {
+                for (int i = emptyCellRowNo; i < clickedRow; i++) {
+                    gameBoard[i][clickedCol] = gameBoard[i+1][clickedCol];
+                }
+            }
+        }
+
+        gameBoard[clickedRow][clickedCol] = "";
+        return true;
     }
 
     public String getGameBoardValue(int row, int column) {
@@ -84,10 +82,6 @@ public class Game implements Serializable {
         }
 
         return coordinates;
-    }
-
-    public boolean getSuccess() {
-        return successfulMove;
     }
 
     public boolean isWon() {
