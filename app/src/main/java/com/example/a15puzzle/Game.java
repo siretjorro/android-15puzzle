@@ -30,14 +30,37 @@ public class Game implements Serializable {
     }
 
     public void move(int clickedRow, int clickedCol) {
-        String toBeMoved = gameBoard[clickedRow][clickedCol];
         int[] emptyCell = getEmptyCoordinates();
         int emptyCellRowNo = emptyCell[0];
         int emptyCellColNo = emptyCell[1];
 
-        if ((Math.abs(clickedRow-emptyCellRowNo) == 1 && Math.abs(clickedCol-emptyCellColNo) == 0) || (Math.abs(clickedRow-emptyCellRowNo) == 0 && Math.abs(clickedCol-emptyCellColNo) == 1)) {
+        if (clickedRow-emptyCellRowNo == 0 && clickedCol < emptyCellColNo) {
+            for (int i = emptyCellColNo; i > clickedCol; i--) {
+                gameBoard[clickedRow][i] = gameBoard[clickedRow][i-1];
+            }
+
             gameBoard[clickedRow][clickedCol] = "";
-            gameBoard[emptyCellRowNo][emptyCellColNo] = toBeMoved;
+            successfulMove = true;
+        } else if (clickedRow-emptyCellRowNo == 0 && clickedCol > emptyCellColNo) {
+            for (int i = emptyCellColNo; i < clickedCol; i++) {
+                gameBoard[clickedRow][i] = gameBoard[clickedRow][i+1];
+            }
+
+            gameBoard[clickedRow][clickedCol] = "";
+            successfulMove = true;
+        } else if (clickedCol-emptyCellColNo == 0 && clickedRow < emptyCellRowNo) {
+            for (int i = emptyCellRowNo; i > clickedRow; i--) {
+                gameBoard[i][clickedCol] = gameBoard[i-1][clickedCol];
+            }
+
+            gameBoard[clickedRow][clickedCol] = "";
+            successfulMove = true;
+        } else if (clickedCol-emptyCellColNo == 0 && clickedRow > emptyCellRowNo) {
+            for (int i = emptyCellRowNo; i < clickedRow; i++) {
+                gameBoard[i][clickedCol] = gameBoard[i+1][clickedCol];
+            }
+
+            gameBoard[clickedRow][clickedCol] = "";
             successfulMove = true;
         } else {
             successfulMove = false;
