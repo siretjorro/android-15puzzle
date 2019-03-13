@@ -3,18 +3,18 @@
     <item android:state_pressed="false">
         <shape android:shape="rectangle">
             <corners android:radius="20dp"></corners>
-            <solid android:color="#BDBEFF"/>
+            <solid android:color="@color/buttonBackground"/>
             <stroke android:width="4dip"
-                android:color="#9E9EE8"/>
+                android:color="@color/buttonStroke"/>
         </shape>
     </item>
 
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:radius="20dp"></corners>
-            <solid android:color="#A3D4E8"/>
+            <solid android:color="@color/buttonBackground"/>
             <stroke android:width="8dip"
-                android:color="#9E9EE8"/>
+                android:color="@color/buttonStroke"/>
         </shape>
     </item>
 

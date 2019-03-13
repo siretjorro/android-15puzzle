@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#FF6A5B</color>
+    <color name="colorPrimaryDark">#ED472E</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="buttonBackground">#FFA586</color>
+    <color name="buttonStroke">#FF6A5B</color>
+    <color name="gameBackground">#FFDCC6</color>
+    <color name="textColor">#ED472E</color>
 </resources>

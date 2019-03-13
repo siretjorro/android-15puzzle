@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">15puzzle</string>
-    <string name="moves">Moves</string>
-    <string name="time">Time</string>
+    <string name="moves">moves</string>
+    <string name="time">time</string>
     <string name="zero">0</string>
 
 </resources>

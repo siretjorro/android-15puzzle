@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void buttonClick(int row, int column) {  
+    public void buttonClick(int row, int column) {
         if (game.move(row, column)) {
             noOfMoves++;
         }
