@@ -3,5 +3,6 @@
     <string name="moves">moves</string>
     <string name="time">time</string>
     <string name="zero">0</string>
+    <string name="new_game">NEW GAME</string>
 
 </resources>
