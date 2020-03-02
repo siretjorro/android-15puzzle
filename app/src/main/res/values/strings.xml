@@ -2,7 +2,10 @@
     <string name="app_name">15puzzle</string>
     <string name="moves">moves</string>
     <string name="time">time</string>
+    <string name="game">game</string>
     <string name="zero">0</string>
     <string name="new_game">NEW GAME</string>
+    <string name="win_text">You won! Number of moves: </string>
+
 
 </resources>

@@ -3,7 +3,6 @@ package com.example.a15puzzle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (game.isWon()) {
             Toast.makeText(MainActivity.this,
-                    "You won! Number of moves: " + Integer.toString(noOfMoves),
+                     R.string.win_text + Integer.toString(noOfMoves),
                     Toast.LENGTH_LONG).show();
             newGame();
         }
